@@ -1,24 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import Pokemon from './Components/Pokemon';
 
-
-function Test(props){
-    const [poke, setPoke] = useState(false);
-
-    useEffect( () => {
-        fetch(props.url)
-        .then( res => res.json())
-        .then( pokedex => setPoke(pokedex))
-    }, []);
-
-    return(
-        <div>
-            { poke ? (
-                <p> { poke.sprites.other['official-artwork'].front_default } </p>
-            ): '' }
-        </div>
-    )
-}
+import { Container } from './app-styles';
 
 
 function App() {
@@ -26,7 +9,7 @@ function App() {
     const [pokelist, setPokeList] = useState([]);
 
     useEffect( () => {
-        fetch("https://pokeapi.co/api/v2/pokemon?limit=10")
+        fetch("https://pokeapi.co/api/v2/pokemon?limit=12")
         .then( res => res.json())
         .then( pokedex => setPokeList(pokedex.results))
     }, []);
@@ -34,12 +17,14 @@ function App() {
     console.log(pokelist)
 
   return (
-    <div className="App">
-        {
-            pokelist.map( poke => {
-                return <Test url={poke.url} />
-            })
-        }
+      <div className="container">
+        <Container>
+            {
+                pokelist.map( poke => {
+                    return <Pokemon url={poke.url} key={poke.name} />
+                })
+            }
+        </Container>
     </div>
   );
 }
