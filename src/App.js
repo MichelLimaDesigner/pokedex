@@ -1,24 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
+
+function Test(props){
+    const [poke, setPoke] = useState(false);
+
+    useEffect( () => {
+        fetch(props.url)
+        .then( res => res.json())
+        .then( pokedex => setPoke(pokedex))
+    }, []);
+
+    return(
+        <div>
+            { poke ? (
+                <p> { poke.sprites.other['official-artwork'].front_default } </p>
+            ): '' }
+        </div>
+    )
+}
+
+
 function App() {
+
+    const [pokelist, setPokeList] = useState([]);
+
+    useEffect( () => {
+        fetch("https://pokeapi.co/api/v2/pokemon?limit=10")
+        .then( res => res.json())
+        .then( pokedex => setPokeList(pokedex.results))
+    }, []);
+
+    console.log(pokelist)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {
+            pokelist.map( poke => {
+                return <Test url={poke.url} />
+            })
+        }
     </div>
   );
 }
