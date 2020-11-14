@@ -9,7 +9,7 @@ function Pokemon(props){
         fetch(props.url)
         .then( res => res.json())
         .then( pokedex => setPoke(pokedex))
-    }, []);
+    }, [props.url]);
 
     return(
         <Fragment>
@@ -20,6 +20,14 @@ function Pokemon(props){
                     </figure>
                     <p> { poke.name } </p>
                     <p> Nº { poke.id } </p>
+                    
+                    {
+                        poke.types.map( type => {
+                            return(
+                                <p key={type.type.name}> { type.type.name } </p>
+                            )
+                        })
+                    }
                 </Card>
             ): '' }
         </Fragment>
