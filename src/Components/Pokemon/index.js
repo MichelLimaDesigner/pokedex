@@ -14,20 +14,22 @@ function Pokemon(props){
     return(
         <Fragment>
             { poke ? (
-                <Card >
+                <Card className={poke.types[0].type.name}>
+                    <p className="card__id"> Nº { poke.id } </p>
                     <figure className="card__image">
                         <img src={poke.sprites.other['official-artwork'].front_default} alt={poke.name}/>
                     </figure>
-                    <p> { poke.name } </p>
-                    <p> Nº { poke.id } </p>
+                    <p className="card__name"> { poke.name } </p>
                     
-                    {
-                        poke.types.map( type => {
-                            return(
-                                <p key={type.type.name}> { type.type.name } </p>
-                            )
-                        })
-                    }
+                    <div className="card__types">
+                        {
+                            poke.types.map( type => {
+                                return(
+                                    <p key={type.type.name}> { type.type.name } </p>
+                                )
+                            })
+                        }
+                    </div>
                 </Card>
             ): '' }
         </Fragment>

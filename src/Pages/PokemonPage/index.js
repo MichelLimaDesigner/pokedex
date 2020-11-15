@@ -26,8 +26,8 @@ function PokemonPage(props){
 
                         <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name}/>
 
-                        <p> Altura: {pokemon.height / 10} metros </p>
-                        <p> Peso: {pokemon.weight / 10} Kg </p>
+                        <p> Height: {pokemon.height / 10} m </p>
+                        <p> Weight: {pokemon.weight / 10} Kg </p>
 
                         { pokemon.stats.map( stat => {
                             return(

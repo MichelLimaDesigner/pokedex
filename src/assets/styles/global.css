@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+a, ul, li{
+    color: inherit;
+    text-decoration: none
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
 html, body{
     width: 100%;
     min-height: 100vh;
@@ -11,11 +18,43 @@ html, body{
     justify-content: center;
     align-items: center;
     background-color: var(--color-background);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-text);
 }
 
 :root{
     --color-background: #f8f8f8;
     --color-text: #696969;
+    --color-text-in-gradient: #f8f8f8;
+    --color-grass-primary: #63DF38;
+    --color-grass-secondary: #2ED573;
+    --color-fire-primary: #FFB142;
+    --color-fire-secondary: #FF5252;
+    --color-water-primary: #33D9B2;
+    --color-water-secondary: #34ACE0;
+    --color-bug-primary: #ACE730;
+    --color-bug-secondary: #439710;
+    --color-flying-primary: #81ECEC;
+    --color-flying-secondary: #6799B6;
+    --color-normal-primary: #FFDA79;
+    --color-normal-secondary: #FFB142;
+    --color-poison-primary: #DD54E9;
+    --color-poison-secondary: #4E0E76;
+    --color-electric-primary: #F0FF40;
+    --color-electric-secondary: #F5DF12;
+    --color-ground-primary: #F8C84C;
+    --color-ground-secondary: #AD6A0B;
+    --color-fighting-primary: #D37147;
+    --color-fighting-secondary: #CA1E1E;
+    --color-psychic-primary: #CD84F1;
+    --color-psychic-secondary: #706FD3;
+    --color-rock-primary: #C4C4C4;
+    --color-rock-secondary: #696969;
+    --color-fairy-primary: #FC90D1;
+    --color-fairy-secondary: #F1848B;
+    --color-ghost-primary: #B245BB;
+    --color-ghost-secondary: #2B0443;
+    --shadow: 0 0.1rem 0.8rem rgba(0,0,0, .3);
 }
 
 #root{
