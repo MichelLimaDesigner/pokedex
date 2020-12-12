@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {Pokemon, Stat} from './styles.js';
 
 function PokemonPage(props){
     const [pokemon, setPokemon] = useState(false);
@@ -12,29 +13,64 @@ function PokemonPage(props){
     }, [id]);
     
     return(
-        <div className="container">
+        <div>
             {
                 pokemon ? (
-                    <div>
-                        <p> { pokemon.name } </p>
-                        <p> id: { pokemon.id } </p>
-                        { pokemon.types.map( type => {
-                            return(
-                                <p key={type.type.name}> { type.type.name } </p>
-                            )
-                        }) }
+                    <Pokemon>
+                        <div className={`pokemon__bg ${pokemon.types[0].type.name} `}></div>
 
-                        <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name}/>
+                        <figure className="pokemon__image">
+                            <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name}/>
+                        </figure>
 
-                        <p> Height: {pokemon.height / 10} m </p>
-                        <p> Weight: {pokemon.weight / 10} Kg </p>
+                        <div className="container">
+                            <div className="pokemon__header">
+                                <p className="pokemon__name"> { pokemon.name } <span> Nº { pokemon.id } </span> </p>
+                                <progress value={pokemon.stats[0].base_stat} max={pokemon.stats[0].base_stat}></progress>
+                                <p> {pokemon.stats[0].base_stat} / { pokemon.stats[0].base_stat } </p>
 
-                        { pokemon.stats.map( stat => {
-                            return(
-                                <p key={stat.stat.name}> { stat.stat.name }: {stat.base_stat} </p>
-                            )
-                        }) }
-                    </div>
+                                <div className="pokemon__types">
+                                    { pokemon.types.map( type => {
+                                        return(
+                                            <span key={type.type.name}> { type.type.name } </span>
+                                            )
+                                        })
+                                    }
+                                </div>
+
+                                <div className="pokemon__numbers">
+                                    <p> <span> Height: </span> {pokemon.height / 10} m </p>
+                                    <p> <span> Weight: </span> {pokemon.weight / 10} Kg </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="pokemon__body">
+                            <div className="container">
+                                <nav className="pokemon__menu">
+                                    <ul>
+                                        <li> Stats </li>
+                                        <li> Evolution </li>
+                                        <li> Moves </li>
+                                    </ul>
+                                </nav>
+
+                                <div className="pokemon__stats">
+                                    { pokemon.stats.map( stat => {
+                                        return(
+                                            <div className={`pokemon__stat`} key={stat.stat.name}>
+                                                {/* <progress value={stat.base_stat} max={150}></progress> */}
+                                                <Stat value={stat.base_stat}>
+                                                    <div className={`stat__value ${stat.stat.name}`}>{stat.base_stat}</div>
+                                                </Stat>
+                                                <p className="stat__name"> { stat.stat.name } </p>
+                                            </div>
+                                        )
+                                    }) }
+                                </div>
+                            </div>
+                        </div>
+                    </Pokemon>
                     ) : ''
                 }
         </div>

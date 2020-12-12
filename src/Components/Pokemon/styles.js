@@ -36,6 +36,7 @@ export const Card = styled.div `
         font-weight: 600;
         font-size: 1.2rem;
         margin: 0.5rem auto;
+        text-transform: capitalize;
     }
 
     .card__id{

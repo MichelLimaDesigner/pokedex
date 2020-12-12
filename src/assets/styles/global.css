@@ -54,6 +54,7 @@ html, body{
     --color-fairy-secondary: #F1848B;
     --color-ghost-primary: #B245BB;
     --color-ghost-secondary: #2B0443;
+    --color-border: #d3d3d3;
     --shadow: 0 0.1rem 0.8rem rgba(0,0,0, .3);
 }
 

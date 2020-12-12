@@ -9,7 +9,7 @@ function Home() {
     const [pokelist, setPokeList] = useState([]);
 
     useEffect( () => {
-        fetch("https://pokeapi.co/api/v2/pokemon?limit=100")
+        fetch("https://pokeapi.co/api/v2/pokemon?limit=150")
         .then( res => res.json())
         .then( pokedex => setPokeList(pokedex.results))
     }, []);
