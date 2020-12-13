@@ -31,6 +31,11 @@ function PokemonPage(props){
             setMoveDetails(move);
         });
     }
+
+    function loadAllMoves(btn){
+        setMoves(pokemon.moves);
+        btn.classList.add('btn--hidden');
+    }
     
     return(
         <div>
@@ -120,7 +125,7 @@ function PokemonPage(props){
                                     ) : ''
                                 }
 
-                                <button className={`btn ${pokemon.types[0].type.name}`}>
+                                <button className={`btn ${pokemon.types[0].type.name}`} onClick={ (event) => loadAllMoves(event.currentTarget) }>
                                     <span> See all moves </span>
                                 </button>
                             </div>

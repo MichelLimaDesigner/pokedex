@@ -106,6 +106,10 @@ html, body{
     color: white;
 }
 
+.btn--hidden{
+    display: none;
+}
+
 .btn[class~="grass"] {
     background-image: linear-gradient(to bottom, var(--color-grass-primary), var(--color-grass-secondary));
 }
