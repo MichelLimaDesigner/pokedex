@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 a, ul, li{
@@ -23,9 +24,7 @@ html, body{
 }
 
 :root{
-    --color-background: #f8f8f8;
-    --color-text: #696969;
-    --color-text-in-gradient: #f8f8f8;
+    /* ---------------------------------------------- Pokemon card colors */
     --color-grass-primary: #63DF38;
     --color-grass-secondary: #2ED573;
     --color-fire-primary: #FFB142;
@@ -54,6 +53,11 @@ html, body{
     --color-fairy-secondary: #F1848B;
     --color-ghost-primary: #B245BB;
     --color-ghost-secondary: #2B0443;
+    /* ---------------------------------------------- Text colors */
+    --color-background: #f8f8f8;
+    --color-title: #696969;
+    --color-text: #696969;
+    --color-text-in-gradient: #f8f8f8;
     --color-border: #d3d3d3;
     --shadow: 0 0.1rem 0.8rem rgba(0,0,0, .3);
 }
@@ -74,4 +78,86 @@ html, body{
     .container{
         width: 80%;
     }
+}
+
+/* ----------------- TEXTS ---------------- */
+
+.title{
+    font-size: 1.6rem;
+    color: var(--color-title);
+    text-align: center;
+}
+
+
+/* ----------------- BUTTONS ---------------- */
+
+.btn{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
+    padding: 1.5rem 0;
+    border-radius: 0.3rem;
+    box-shadow: var(--shadow), inset 0 0.2rem 0.5rem rgba(255, 255, 255, 0.4);
+}
+
+.btn span, .btn a{
+    text-align: center;
+    color: white;
+}
+
+.btn[class~="grass"] {
+    background-image: linear-gradient(to bottom, var(--color-grass-primary), var(--color-grass-secondary));
+}
+
+.btn[class~="fire"] {
+    background-image: linear-gradient(to bottom, var(--color-fire-primary), var(--color-fire-secondary));
+}
+
+.btn[class~="water"] {
+    background-image: linear-gradient(to bottom, var(--color-water-primary), var(--color-water-secondary));
+}
+
+.btn[class~="bug"] {
+    background-image: linear-gradient(to bottom, var(--color-bug-primary), var(--color-bug-secondary));
+}
+
+.btn[class~="flying"] {
+    background-image: linear-gradient(to bottom, var(--color-flying-primary), var(--color-flying-secondary));
+}
+
+.btn[class~="normal"] {
+    background-image: linear-gradient(to bottom, var(--color-normal-primary), var(--color-normal-secondary));
+}
+
+.btn[class~="poison"] {
+    background-image: linear-gradient(to bottom, var(--color-poison-primary), var(--color-poison-secondary));
+}
+
+.btn[class~="electric"] {
+    background-image: linear-gradient(to bottom, var(--color-electric-primary), var(--color-electric-secondary));
+}
+
+.btn[class~="ground"] {
+    background-image: linear-gradient(to bottom, var(--color-ground-primary), var(--color-ground-secondary));
+}
+
+.btn[class~="fighting"] {
+    background-image: linear-gradient(to bottom, var(--color-fighting-primary), var(--color-fighting-secondary));
+}
+
+.btn[class~="psychic"] {
+    background-image: linear-gradient(to bottom, var(--color-psychic-primary), var(--color-psychic-secondary));
+}
+
+.btn[class~="rock"] {
+    background-image: linear-gradient(to bottom, var(--color-rock-primary), var(--color-rock-secondary));
+}
+
+.btn[class~="fairy"] {
+    background-image: linear-gradient(to bottom, var(--color-fairy-primary), var(--color-fairy-secondary));
+}
+
+.btn[class~="ghost"] {
+    background-image: linear-gradient(to bottom, var(--color-ghost-primary), var(--color-ghost-secondary));
 }

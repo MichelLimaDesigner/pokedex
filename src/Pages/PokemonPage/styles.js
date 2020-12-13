@@ -37,6 +37,23 @@ export const Pokemon = styled.div `
         position: relative;
         top: -4rem;
         padding: 4.5rem 0 2rem 0;
+
+        progress{
+            appearance: none;
+            width: 15rem;
+            height: 0.5rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin-top: 1rem;
+            border: none;
+            background-color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        progress::-webkit-progress-value{
+            background-image: linear-gradient(to left, var(--color-grass-primary), var(--color-grass-secondary));
+            box-shadow: inset 0 0 0.3rem #fff;
+        }
     }
 
     .pokemon__image{
@@ -77,24 +94,6 @@ export const Pokemon = styled.div `
         }
     }
 
-    .pokemon__body{
-        background-color: white;
-        box-shadow: var(--shadow);
-
-        .pokemon__menu{
-            font-size: 1.2rem;
-            padding: 1rem 0;
-            margin-bottom: 2rem;
-            border-bottom: solid 0.1rem var(--color-border);
-
-            ul{
-                list-style: none;
-                display: flex;
-                justify-content: space-between;
-            }
-        }
-    }
-
     .pokemon__numbers{
         display: flex;
         justify-content: space-around;
@@ -125,14 +124,96 @@ export const Pokemon = styled.div `
         }
     }
 
+    .pokemon__moves{
+        margin: 2rem auto;
+    }
+
+    .pokemon__move{
+        background-color: white;
+        box-shadow: 0 0 0.5rem #d3d3d3;
+        margin: 1.5rem auto;
+        border-radius: 0.3rem;
+        overflow: hidden;
+
+        .move__border{
+            width: 1rem;
+            height: 4.5rem;
+            float: right;
+
+
+            &.grass{
+                background-image: linear-gradient(to bottom, var(--color-grass-primary), var(--color-grass-secondary));
+            }
+
+            &.fire{
+                background-image: linear-gradient(to bottom, var(--color-fire-primary), var(--color-fire-secondary));
+            }
+
+            &.water{
+                background-image: linear-gradient(to bottom, var(--color-water-primary), var(--color-water-secondary));
+            }
+
+            &.bug{
+                background-image: linear-gradient(to bottom, var(--color-bug-primary), var(--color-bug-secondary));
+            }
+
+            &.flying{
+                background-image: linear-gradient(to bottom, var(--color-flying-primary), var(--color-flying-secondary));
+            }
+
+            &.normal{
+                background-image: linear-gradient(to bottom, var(--color-normal-primary), var(--color-normal-secondary));
+            }
+
+            &.poison{
+                background-image: linear-gradient(to bottom, var(--color-poison-primary), var(--color-poison-secondary));
+            }
+
+            &.electric{
+                background-image: linear-gradient(to bottom, var(--color-electric-primary), var(--color-electric-secondary));
+            }
+
+            &.ground{
+                background-image: linear-gradient(to bottom, var(--color-ground-primary), var(--color-ground-secondary));
+            }
+
+            &.fighting{
+                background-image: linear-gradient(to bottom, var(--color-fighting-primary), var(--color-fighting-secondary));
+            }
+
+            &.psychic{
+                background-image: linear-gradient(to bottom, var(--color-psychic-primary), var(--color-psychic-secondary));
+            }
+
+            &.rock{
+                background-image: linear-gradient(to bottom, var(--color-rock-primary), var(--color-rock-secondary));
+            }
+
+            &.fairy{
+                background-image: linear-gradient(to bottom, var(--color-fairy-primary), var(--color-fairy-secondary));
+            }
+
+            &.ghost{
+                background-image: linear-gradient(to bottom, var(--color-ghost-primary), var(--color-ghost-secondary));
+            }
+        }
+
+        h4{
+            font-size: 1.2rem;
+            font-weight: 200;
+            text-transform: capitalize;
+            padding: 1.5rem 1rem;
+        }
+    }
+
 `;
 
 
 export const Stat = styled.div `
     width: 3rem;
     height: 150px;
-    background-color: #f8f8f8;
-    box-shadow: inset 0 0 0.5rem #d3d3d3;
+    background-color: white;
+    box-shadow: 0 0 0.5rem #d3d3d3, inset 0 0 0.5rem #f8f8f8;
     position: relative;
     margin: auto;
     border-radius: 5px;
@@ -145,6 +226,7 @@ export const Stat = styled.div `
         bottom: 0;
         color: white;
         padding-top: 0.5rem;
+        box-shadow: inset 0 -0.1rem 0.5rem #fff;
 
         &.hp{
             background-image: linear-gradient(to bottom, var(--color-bug-primary), var(--color-bug-secondary));
