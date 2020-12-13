@@ -124,6 +124,20 @@ export const Pokemon = styled.div `
         }
     }
 
+    .pokemon__sprites{
+        margin: 3rem auto;
+        
+        .sprites__content{
+            display: flex;
+        }
+
+        .pokemon__sprite{
+            img{
+                width: 200px;
+            }
+        }
+    }
+
     .pokemon__moves{
         margin: 2rem auto;
     }
@@ -134,6 +148,32 @@ export const Pokemon = styled.div `
         margin: 1.5rem auto;
         border-radius: 0.3rem;
         overflow: hidden;
+        transition: all .3s ease-out;
+
+        .move__details{
+            border-top: solid 0.1rem var(--color-border);
+            padding: 1rem;
+            
+            ul{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                list-style: none;
+            }
+
+            li{
+                text-align: center;
+                margin: 1rem auto;
+            }
+
+            p{
+                text-align: center;
+                margin-top: 1rem;
+                padding: 1rem;
+                line-height: 2;
+                border: solid 0.1rem var(--color-border);
+                border-radius: 0.3rem;
+            }
+        }
 
         .move__border{
             width: 1rem;

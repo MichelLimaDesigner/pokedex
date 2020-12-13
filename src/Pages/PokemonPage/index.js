@@ -4,6 +4,7 @@ import {Pokemon, Stat} from './styles.js';
 function PokemonPage(props){
     const [pokemon, setPokemon] = useState(false);
     const [moves, setMoves] = useState(false);
+    const [moveDetails, setMoveDetails] = useState(false);
     const {id} = props.match.params;
     
     useEffect( () => {
@@ -22,10 +23,17 @@ function PokemonPage(props){
         })
         .catch( error => console.log(error))
     }, [id]);
+
+    function saveMoveDetails(url){
+        fetch(url)
+        .then( res => res.json())
+        .then( move => {
+            setMoveDetails(move);
+        });
+    }
     
     return(
         <div>
-            { console.log(moves) }
             {
                 pokemon ? (
                     <Pokemon>
@@ -73,15 +81,39 @@ function PokemonPage(props){
                                 }) }
                             </div>
 
+                            <div className="pokemon__sprites">
+                                <h3 className="title"> Sprites </h3>
+
+                                <div className="sprites__content">
+                                    <figure className="pokemon__sprite">
+                                        <img src={pokemon.sprites['front_default']} alt=""/>
+                                    </figure>
+                                    <figure className="pokemon__sprite">
+                                        <img src={pokemon.sprites['back_default']} alt=""/>
+                                    </figure>
+                                </div>
+                            </div>
+
                             <div className="pokemon__moves">
                                 <h3 className="title"> Moves </h3>
                                 {
                                     moves ? (
                                         moves.map( move => {
                                             return(
-                                                <div className="pokemon__move">
+                                                <div className="pokemon__move" key={move.move.name} onClick={ event => saveMoveDetails(move.move.url) }>
                                                     <div className={`move__border ${pokemon.types[0].type.name}`}></div>
                                                     <h4> { move.move.name } </h4>
+                                                    { moveDetails && moveDetails.name === move.move.name ? (
+                                                        <div className="move__details">
+                                                            <ul>
+                                                                <li> Type: { moveDetails.type.name } </li>
+                                                                <li> Accuracy: { moveDetails.accuracy } </li>
+                                                                <li> Power: { moveDetails.power } </li>
+                                                                <li> Pp: { moveDetails.pp } </li>
+                                                            </ul>
+                                                            <p> { moveDetails.effect_entries[0].effect } </p>
+                                                        </div>
+                                                    ) : '' }
                                                 </div>
                                             )
                                         })
