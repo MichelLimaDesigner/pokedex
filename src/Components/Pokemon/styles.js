@@ -3,13 +3,12 @@ import styled from 'styled-components';
 export const Card = styled.div `
     width: 100%;
     padding: 1rem 0;
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
     display: block;
     background-color: white;
     text-align: center;
     color: var(--color-text-in-gradient);
     box-shadow: var(--shadow);
-    border-radius: 0.8rem;
     transition: all 0.1s ease-out;
     overflow: hidden;
 

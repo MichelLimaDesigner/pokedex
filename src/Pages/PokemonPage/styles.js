@@ -133,7 +133,7 @@ export const Pokemon = styled.div `
 
         .pokemon__sprite{
             img{
-                width: 200px;
+                width: 180px;
             }
         }
     }
