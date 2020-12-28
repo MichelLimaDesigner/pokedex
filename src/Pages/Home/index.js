@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Pokemon from '../../Components/Pokemon';
 
-import { Container, Header } from './styles';
+import { Container, Header, TitleSection, Types } from './styles';
 import SearchIcon from '../../assets/images/Icons/SearchIcon.svg';
+import Grass from '../../assets/images/Types/grass.png';
+import Fire from '../../assets/images/Types/fire.png';
+import Water from '../../assets/images/Types/water.png';
 
 function Home() {
 
@@ -25,11 +28,54 @@ function Home() {
                     <figure>
                         <img src={SearchIcon} alt=""/>
                     </figure>
-                    <a href=""> See all types </a>
                 </div>
             </Header>
 
             <div className="container">
+                <TitleSection>
+                    <span>Pokemon types</span>
+                    <span>See all</span>
+                </TitleSection>
+            </div>
+
+            <Types>
+                <Link to={`/type/12`}>
+                    <div className="type grass">
+                        <h3> Grass </h3>
+                        <figure>
+                            <img src={Grass} alt=""/>
+                        </figure>
+                    </div>
+                </Link>
+
+                <Link to={`/type/10`}>
+                    <div className="type fire">
+                        <h3> Fire </h3>
+                        <figure>
+                            <img src={Fire} alt=""/>
+                        </figure>
+                    </div>
+                </Link>
+
+                <Link to={`/type/11`}>
+                    <div className="type water">
+                        <h3> Water </h3>
+                        <figure>
+                            <img src={Water} alt=""/>
+                        </figure>
+                    </div>
+                </Link>
+
+                <div className="type">
+                    <h3> See all </h3>
+                </div>
+            </Types>
+
+            <div className="container">
+                <TitleSection>
+                    Pokemons
+                </TitleSection>
+
                 <Container>
                     {
                         pokelist.map( poke => {
