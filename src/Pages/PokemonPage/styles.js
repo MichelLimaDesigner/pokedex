@@ -13,6 +13,8 @@ export const Pokemon = styled.div `
         height: 15rem;
         background-color: #d3d3d3;
         background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
         position: absolute;
         top: -1rem;
 

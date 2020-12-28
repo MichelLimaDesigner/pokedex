@@ -8,12 +8,13 @@ import SearchIcon from '../../assets/images/Icons/SearchIcon.svg';
 function Home() {
 
     const [pokelist, setPokeList] = useState([]);
+    const [urlLimit, setUrlLimit] = useState(20);
 
     useEffect( () => {
-        fetch("https://pokeapi.co/api/v2/pokemon?limit=150")
+        fetch(`https://pokeapi.co/api/v2/pokemon?limit=${urlLimit}`)
         .then( res => res.json())
         .then( pokedex => setPokeList(pokedex.results))
-    }, []);
+    }, [urlLimit]);
 
     return (
         <div>
@@ -40,6 +41,10 @@ function Home() {
                         })
                     }
                 </Container>
+
+                <button className="btn grass" onClick={ () => setUrlLimit(urlLimit + 20) }>
+                    <span> Load more </span>
+                </button>
             </div>
         </div>
     );
