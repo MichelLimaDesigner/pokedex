@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Pokemon from '../../Components/Pokemon';
+import ModalTypes from '../../Components/ModalTypes';
 
 import { Container, Header, TitleSection, Types } from './styles';
 import SearchIcon from '../../assets/images/Icons/SearchIcon.svg';
@@ -13,6 +14,8 @@ function Home() {
     const [pokelist, setPokeList] = useState([]);
     const [urlLimit, setUrlLimit] = useState(20);
 
+    const modalTypes = useRef();
+
     useEffect( () => {
         fetch(`https://pokeapi.co/api/v2/pokemon?limit=${urlLimit}`)
         .then( res => res.json())
@@ -24,7 +27,7 @@ function Home() {
             <Header>
                 <div className="container">
                     <h1> Pokedex </h1>
-                    <input type="text" placeholder="Search"/>
+                    <input type="text" placeholder="Search" />
                     <figure>
                         <img src={SearchIcon} alt=""/>
                     </figure>
@@ -34,7 +37,7 @@ function Home() {
             <div className="container">
                 <TitleSection>
                     <span>Pokemon types</span>
-                    <span>See all</span>
+                    <span onClick={ () => modalTypes.current.open() }>See all</span>
                 </TitleSection>
             </div>
 
@@ -70,6 +73,8 @@ function Home() {
                     <h3> See all </h3>
                 </div>
             </Types>
+
+            <ModalTypes ref={modalTypes} />
 
             <div className="container">
                 <TitleSection>
