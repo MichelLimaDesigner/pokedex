@@ -58,7 +58,7 @@ export const Modal = styled.div `
         border-radius: 0.3rem;
         padding: 1rem;
 
-        &.grass{
+    &.grass{
         background-image: linear-gradient(to bottom, var(--color-grass-primary), var(--color-grass-secondary));
     }
 
@@ -112,6 +112,22 @@ export const Modal = styled.div `
 
     &.ghost{
         background-image: linear-gradient(to bottom, var(--color-ghost-primary), var(--color-ghost-secondary));
+    }
+
+    &.dark{
+        background-image: linear-gradient(to bottom, var(--color-dark-primary), var(--color-dark-secondary));
+    }
+
+    &.ice{
+        background-image: linear-gradient(to bottom, var(--color-ice-primary), var(--color-ice-secondary));
+    }
+
+    &.dragon{
+        background-image: linear-gradient(to bottom, var(--color-dragon-primary), var(--color-dragon-secondary));
+    }
+
+    &.steel{
+        background-image: linear-gradient(to bottom, var(--color-steel-primary), var(--color-steel-secondary));
     }
 
         h3{

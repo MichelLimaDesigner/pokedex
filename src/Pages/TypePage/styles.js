@@ -1,6 +1,22 @@
 import styled from 'styled-components';
 
+import BgDark from '../../assets/images/dark.png';
+import BgDragon from '../../assets/images/dragon.png';
+import BgElectric from '../../assets/images/electric.png';
+import BgFighting from '../../assets/images/fighting.png';
+import BgFairy from '../../assets/images/fairy.png';
+import BgFire from '../../assets/images/fire.png';
+import BgFlying from '../../assets/images/flying.png';
+import BgGhost from '../../assets/images/ghost.png';
 import BgGrass from '../../assets/images/grass.png';
+import BgGround from '../../assets/images/ground.png';
+import BgIce from '../../assets/images/ice.png';
+import BgNormal from '../../assets/images/normal.png';
+import BgPoison from '../../assets/images/poison.png';
+import BgPsychic from '../../assets/images/psychic.png';
+import BgRock from '../../assets/images/rock.png';
+import BgSteel from '../../assets/images/steel.png';
+import BgWater from '../../assets/images/water.png';
 
 export const Header = styled.header `
     width: 100%;
@@ -16,56 +32,72 @@ export const Header = styled.header `
         background-image: url(${BgGrass});
     }
 
+    &.bug{
+        background-image: url(${BgGrass});
+    }
+
     &.fire{
-        background-image: linear-gradient(to bottom, var(--color-fire-primary), var(--color-fire-secondary));
+        background-image: url(${BgFire});
     }
 
     &.water{
-        background-image: linear-gradient(to bottom, var(--color-water-primary), var(--color-water-secondary));
-    }
-
-    &.bug{
-        background-image: linear-gradient(to bottom, var(--color-bug-primary), var(--color-bug-secondary));
-    }
-
-    &.flying{
-        background-image: linear-gradient(to bottom, var(--color-flying-primary), var(--color-flying-secondary));
-    }
-
-    &.normal{
-        background-image: linear-gradient(to bottom, var(--color-normal-primary), var(--color-normal-secondary));
+        background-image: url(${BgWater});
     }
 
     &.poison{
-        background-image: linear-gradient(to bottom, var(--color-poison-primary), var(--color-poison-secondary));
-    }
-
-    &.electric{
-        background-image: linear-gradient(to bottom, var(--color-electric-primary), var(--color-electric-secondary));
-    }
-
-    &.ground{
-        background-image: linear-gradient(to bottom, var(--color-ground-primary), var(--color-ground-secondary));
-    }
-
-    &.fighting{
-        background-image: linear-gradient(to bottom, var(--color-fighting-primary), var(--color-fighting-secondary));
-    }
-
-    &.psychic{
-        background-image: linear-gradient(to bottom, var(--color-psychic-primary), var(--color-psychic-secondary));
+        background-image: url(${BgPoison});
     }
 
     &.rock{
-        background-image: linear-gradient(to bottom, var(--color-rock-primary), var(--color-rock-secondary));
+        background-image: url(${BgRock});
+    }
+
+    &.flying{
+        background-image: url(${BgFlying});
+    }
+
+    &.ground{
+        background-image: url(${BgGround});
+    }
+
+    &.electric{
+        background-image: url(${BgElectric});
+    }
+
+    &.steel{
+        background-image: url(${BgSteel});
+    }
+
+    &.normal{
+        background-image: url(${BgNormal});
+    }
+
+    &.fighting{
+        background-image: url(${BgFighting});
     }
 
     &.fairy{
-        background-image: linear-gradient(to bottom, var(--color-fairy-primary), var(--color-fairy-secondary));
+        background-image: url(${BgFairy});
+    }
+
+    &.psychic{
+        background-image: url(${BgPsychic});
     }
 
     &.ghost{
-        background-image: linear-gradient(to bottom, var(--color-ghost-primary), var(--color-ghost-secondary));
+        background-image: url(${BgGhost});
+    }
+
+    &.ice{
+        background-image: url(${BgIce});
+    }
+
+    &.dark{
+        background-image: url(${BgDark});
+    }
+
+    &.dragon{
+        background-image: url(${BgDragon});
     }
 
     h1{
@@ -105,7 +137,7 @@ export const DamageCard = styled.div `
         align-items: center;
 
         &.grass{
-            background-image: url(${BgGrass});
+            background-image: linear-gradient(to bottom, var(--color-grass-primary), var(--color-grass-secondary));
         }
 
         &.fire{
@@ -158,6 +190,22 @@ export const DamageCard = styled.div `
 
         &.ghost{
             background-image: linear-gradient(to bottom, var(--color-ghost-primary), var(--color-ghost-secondary));
+        }
+
+        &.dark{
+            background-image: linear-gradient(to bottom, var(--color-dark-primary), var(--color-dark-secondary));
+        }
+
+        &.ice{
+            background-image: linear-gradient(to bottom, var(--color-ice-primary), var(--color-ice-secondary));
+        }
+
+        &.dragon{
+            background-image: linear-gradient(to bottom, var(--color-dragon-primary), var(--color-dragon-secondary));
+        }
+
+        &.steel{
+            background-image: linear-gradient(to bottom, var(--color-steel-primary), var(--color-steel-secondary));
         }
 
         img{
@@ -307,6 +355,22 @@ export const Moves = styled.div `
 
             &.ghost{
                 background-image: linear-gradient(to bottom, var(--color-ghost-primary), var(--color-ghost-secondary));
+            }
+
+            &.dark{
+                background-image: linear-gradient(to bottom, var(--color-dark-primary), var(--color-dark-secondary));
+            }
+
+            &.ice{
+                background-image: linear-gradient(to bottom, var(--color-ice-primary), var(--color-ice-secondary));
+            }
+
+            &.dragon{
+                background-image: linear-gradient(to bottom, var(--color-dragon-primary), var(--color-dragon-secondary));
+            }
+
+            &.steel{
+                background-image: linear-gradient(to bottom, var(--color-steel-primary), var(--color-steel-secondary));
             }
         }
 

@@ -53,6 +53,14 @@ html, body{
     --color-fairy-secondary: #F1848B;
     --color-ghost-primary: #B245BB;
     --color-ghost-secondary: #2B0443;
+    --color-dark-primary: #942E20;
+    --color-dark-secondary: #2C0303;
+    --color-ice-primary: #C8EEEE;
+    --color-ice-secondary: #87CDAB;
+    --color-dragon-primary: #F8E434;
+    --color-dragon-secondary: #D01C19;
+    --color-steel-primary: #EDEFD6;
+    --color-steel-secondary: #99988A;
     /* ---------------------------------------------- Text colors */
     --color-background: #f8f8f8;
     --color-title: #696969;
@@ -168,6 +176,22 @@ html, body{
 
 .btn[class~="ghost"] {
     background-image: linear-gradient(to bottom, var(--color-ghost-primary), var(--color-ghost-secondary));
+}
+
+.btn[class~="dark"] {
+    background-image: linear-gradient(to bottom, var(--color-dark-primary), var(--color-dark-secondary));
+}
+
+.btn[class~="ice"] {
+    background-image: linear-gradient(to bottom, var(--color-ice-primary), var(--color-ice-secondary));
+}
+
+.btn[class~="dragon"] {
+    background-image: linear-gradient(to bottom, var(--color-dragon-primary), var(--color-dragon-secondary));
+}
+
+.btn[class~="steel"] {
+    background-image: linear-gradient(to bottom, var(--color-steel-primary), var(--color-steel-secondary));
 }
 
 /* ----------------- INPUTS ---------------- */
