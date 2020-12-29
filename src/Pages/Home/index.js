@@ -69,8 +69,8 @@ function Home() {
                     </div>
                 </Link>
 
-                <div className="type">
-                    <h3> See all </h3>
+                <div className="type--btn" onClick={ () => modalTypes.current.open() }>
+                    <h3> See all types</h3>
                 </div>
             </Types>
 

@@ -89,7 +89,7 @@ export const Types = styled.div `
         figure{
             width: 5rem;
             height: 5rem;
-            background-color: rgba(255, 255, 255, 0.6);
+            background-color: rgba(255, 255, 255, 0.4);
             border-radius: 50%;
             float: right;
 
@@ -97,6 +97,19 @@ export const Types = styled.div `
                 margin-top : -0.5rem;
                 margin-left: -0.5rem;
             }
+        }
+    }
+
+    .type--btn{
+        width: 7rem;
+        height: 7rem;
+        text-align: center;
+        box-shadow: var(--shadow);
+        display: inline-table;
+        padding-top: 2rem;
+        
+        h3{
+            font-weight: 200;
         }
     }
 `;
@@ -109,4 +122,5 @@ export const TitleSection = styled.h3 `
     justify-content: space-between;
     align-items: center;
     margin-top: 2rem;
+    font-size: 1.4rem;
 `;

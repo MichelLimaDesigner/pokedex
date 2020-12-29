@@ -1,4 +1,16 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const anime = keyframes `
+    from{
+        opacity: 0;
+        transform: translateY(5rem);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+`;
 
 export const Card = styled.div `
     width: 100%;
@@ -11,7 +23,9 @@ export const Card = styled.div `
     box-shadow: var(--shadow);
     transition: all 0.1s ease-out;
     overflow: hidden;
-
+    opacity: 0;
+    animation: ${anime} 0.3s ease-out forwards;
+ 
     :hover{
         transform: scale(1.1);
     }
