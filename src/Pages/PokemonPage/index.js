@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import ArrowBtn from '../../Components/ArrowBtn/index.js';
+import Loader from '../../Components/Loader/index.js';
+import Error from '../../Components/Error/index.js';
 import {Pokemon, Stat} from './styles.js';
 
 function PokemonPage(props){
     const [pokemon, setPokemon] = useState(false);
     const [moves, setMoves] = useState(false);
     const [moveDetails, setMoveDetails] = useState(false);
+    const [error, setError] = useState(false);
     const {id} = props.match.params;
     
     useEffect( () => {
@@ -36,12 +40,17 @@ function PokemonPage(props){
         setMoves(pokemon.moves);
         btn.classList.add('btn--hidden');
     }
+
+    setTimeout( () => {
+        setError(true);
+    }, 3000 )
     
     return(
         <div>
             {
                 pokemon ? (
                     <Pokemon>
+                        <ArrowBtn />
                         <div className={`pokemon__bg ${pokemon.types[0].type.name} `}></div>
 
                         <figure className="pokemon__image">
@@ -133,7 +142,13 @@ function PokemonPage(props){
                         </div>
 
                     </Pokemon>
-                    ) : ''
+                    ) : (
+                        <div>
+                            { error ? (
+                                <Error />
+                            ) : <Loader /> }
+                        </div>
+                    )
                 }
         </div>
     )

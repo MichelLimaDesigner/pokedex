@@ -1,7 +1,21 @@
 import styled from 'styled-components';
 
-import BgGrass from '../../assets/images/grass.png';
+import BgDark from '../../assets/images/dark.png';
+import BgDragon from '../../assets/images/dragon.png';
+import BgElectric from '../../assets/images/electric.png';
+import BgFighting from '../../assets/images/fighting.png';
+import BgFairy from '../../assets/images/fairy.png';
 import BgFire from '../../assets/images/fire.png';
+import BgFlying from '../../assets/images/flying.png';
+import BgGhost from '../../assets/images/ghost.png';
+import BgGrass from '../../assets/images/grass.png';
+import BgGround from '../../assets/images/ground.png';
+import BgIce from '../../assets/images/ice.png';
+import BgNormal from '../../assets/images/normal.png';
+import BgPoison from '../../assets/images/poison.png';
+import BgPsychic from '../../assets/images/psychic.png';
+import BgRock from '../../assets/images/rock.png';
+import BgSteel from '../../assets/images/steel.png';
 import BgWater from '../../assets/images/water.png';
 
 export const Pokemon = styled.div `
@@ -13,10 +27,16 @@ export const Pokemon = styled.div `
         height: 15rem;
         background-color: #d3d3d3;
         background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
         position: absolute;
         top: -1rem;
 
         &.grass{
+            background-image: url(${BgGrass});
+        }
+
+        &.bug{
             background-image: url(${BgGrass});
         }
 
@@ -26,6 +46,62 @@ export const Pokemon = styled.div `
 
         &.water{
             background-image: url(${BgWater});
+        }
+
+        &.poison{
+            background-image: url(${BgPoison});
+        }
+
+        &.rock{
+            background-image: url(${BgRock});
+        }
+
+        &.flying{
+            background-image: url(${BgFlying});
+        }
+
+        &.ground{
+            background-image: url(${BgGround});
+        }
+
+        &.electric{
+            background-image: url(${BgElectric});
+        }
+
+        &.steel{
+            background-image: url(${BgSteel});
+        }
+
+        &.normal{
+            background-image: url(${BgNormal});
+        }
+
+        &.fighting{
+            background-image: url(${BgFighting});
+        }
+
+        &.fairy{
+            background-image: url(${BgFairy});
+        }
+
+        &.psychic{
+            background-image: url(${BgPsychic});
+        }
+
+        &.ghost{
+            background-image: url(${BgGhost});
+        }
+
+        &.ice{
+            background-image: url(${BgIce});
+        }
+
+        &.dark{
+            background-image: url(${BgDark});
+        }
+
+        &.dragon{
+            background-image: url(${BgDragon});
         }
     }
 
@@ -133,7 +209,7 @@ export const Pokemon = styled.div `
 
         .pokemon__sprite{
             img{
-                width: 200px;
+                width: 180px;
             }
         }
     }
@@ -235,6 +311,22 @@ export const Pokemon = styled.div `
 
             &.ghost{
                 background-image: linear-gradient(to bottom, var(--color-ghost-primary), var(--color-ghost-secondary));
+            }
+
+            &.dark{
+                background-image: linear-gradient(to bottom, var(--color-dark-primary), var(--color-dark-secondary));
+            }
+
+            &.ice{
+                background-image: linear-gradient(to bottom, var(--color-ice-primary), var(--color-ice-secondary));
+            }
+
+            &.dragon{
+                background-image: linear-gradient(to bottom, var(--color-dragon-primary), var(--color-dragon-secondary));
+            }
+
+            &.steel{
+                background-image: linear-gradient(to bottom, var(--color-steel-primary), var(--color-steel-secondary));
             }
         }
 

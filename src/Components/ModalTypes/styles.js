@@ -1,6 +1,18 @@
 import styled, { keyframes } from 'styled-components';
 
-const anime = keyframes `
+export const Container = styled.div `
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+`;
+
+const modalAnime = keyframes `
     from{
         opacity: 0;
         transform: translateY(5rem);
@@ -12,57 +24,39 @@ const anime = keyframes `
     }
 `;
 
-export const Card = styled.div `
-    width: 100%;
-    padding: 1rem 0;
-    border-radius: 0.5rem;
-    display: block;
+export const Modal = styled.div `
+    width: 90%;
+    max-height: 35rem;
     background-color: white;
-    text-align: center;
-    color: var(--color-text-in-gradient);
     box-shadow: var(--shadow);
-    transition: all 0.1s ease-out;
-    overflow: hidden;
+    padding: 3rem 1.5rem;
+    position: relative;
+    z-index: 99;
+    text-align: center;
+    overflow-y: scroll;
+    border-radius: 0.3rem;
     opacity: 0;
-    animation: ${anime} 0.3s ease-out forwards;
- 
-    :hover{
-        transform: scale(1.1);
+    animation: ${modalAnime} 0.3s ease-out forwards;
+
+    h1{
+        margin: 2rem auto;
     }
 
-    .card__image{
-        width: 6rem;
-        height: 6rem;
-        text-align: center;
-        margin: 1rem auto;
-        background-color: rgba(255,255,255, .4);
-        border-radius: 50%;
-        transition: all 0.3s linear;
-
-        img{
-            width: 110%;
-            margin-left: -0.3rem;
-        }
+    .modal__grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
     }
 
-    .card__name{
-        font-weight: 600;
-        font-size: 1.2rem;
-        margin: 0.5rem auto;
-        text-transform: capitalize;
-    }
-
-    .card__id{
-        font-weight: 200;
-    }
-
-    .card__types{
-        width: 80%;
-        display: flex;
-        justify-content: space-around;
-        margin: 0.5rem auto;
-        font-weight: 200;
-    }
+    .type{
+        width: 100%;
+        height: 4rem;
+        display: inline-table;
+        background-color: white;
+        box-shadow: var(--shadow);
+        color: white;
+        border-radius: 0.3rem;
+        padding: 1rem;
 
     &.grass{
         background-image: linear-gradient(to bottom, var(--color-grass-primary), var(--color-grass-secondary));
@@ -136,4 +130,41 @@ export const Card = styled.div `
         background-image: linear-gradient(to bottom, var(--color-steel-primary), var(--color-steel-secondary));
     }
 
+        h3{
+            font-weight: 200;
+            float: left;
+        }
+
+        figure{
+            width: 5rem;
+            height: 5rem;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            float: right;
+
+            img{
+                margin-top : -0.5rem;
+                margin-left: -0.5rem;
+            }
+        }
+    }
+`;
+
+const lightboxAnime = keyframes `
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+`;
+
+export const Lightbox = styled.div `
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .8);
+    position: absolute;
+    opacity: 0;
+    animation: ${lightboxAnime} 0.3s ease-out forwards;
 `;

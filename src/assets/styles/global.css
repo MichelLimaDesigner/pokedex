@@ -53,6 +53,14 @@ html, body{
     --color-fairy-secondary: #F1848B;
     --color-ghost-primary: #B245BB;
     --color-ghost-secondary: #2B0443;
+    --color-dark-primary: #942E20;
+    --color-dark-secondary: #2C0303;
+    --color-ice-primary: #C8EEEE;
+    --color-ice-secondary: #87CDAB;
+    --color-dragon-primary: #F8E434;
+    --color-dragon-secondary: #D01C19;
+    --color-steel-primary: #EDEFD6;
+    --color-steel-secondary: #99988A;
     /* ---------------------------------------------- Text colors */
     --color-background: #f8f8f8;
     --color-title: #696969;
@@ -83,9 +91,11 @@ html, body{
 /* ----------------- TEXTS ---------------- */
 
 .title{
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     color: var(--color-title);
-    text-align: center;
+    margin: 3rem auto;
+    border-bottom: solid 1px var(--color-border);
+    padding-bottom: 0.5rem;
 }
 
 
@@ -96,9 +106,11 @@ html, body{
     background-color: transparent;
     border: none;
     font-size: 1.2rem;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
+    margin: 1rem auto;
     border-radius: 0.3rem;
     box-shadow: var(--shadow), inset 0 0.2rem 0.5rem rgba(255, 255, 255, 0.4);
+    cursor: pointer;
 }
 
 .btn span, .btn a{
@@ -164,4 +176,41 @@ html, body{
 
 .btn[class~="ghost"] {
     background-image: linear-gradient(to bottom, var(--color-ghost-primary), var(--color-ghost-secondary));
+}
+
+.btn[class~="dark"] {
+    background-image: linear-gradient(to bottom, var(--color-dark-primary), var(--color-dark-secondary));
+}
+
+.btn[class~="ice"] {
+    background-image: linear-gradient(to bottom, var(--color-ice-primary), var(--color-ice-secondary));
+}
+
+.btn[class~="dragon"] {
+    background-image: linear-gradient(to bottom, var(--color-dragon-primary), var(--color-dragon-secondary));
+}
+
+.btn[class~="steel"] {
+    background-image: linear-gradient(to bottom, var(--color-steel-primary), var(--color-steel-secondary));
+}
+
+/* ----------------- INPUTS ---------------- */
+
+input{
+    width: 100%;
+    height: 3rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    margin: 1rem auto;
+    background-color: rgba(255, 255, 255, .7);
+    transition: all 0.3s ease-out;
+}
+
+input:focus{
+    box-shadow: 0 0.1rem 0.3rem rgba(0,0,0, .5);
+    border: solid 1px #696969;
+    outline: none;
+    background-color: white;
 }
