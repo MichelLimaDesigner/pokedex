@@ -15,12 +15,13 @@ function TypePage(props){
     const [moves, setMoves] = useState(false);
     const [moveDetails, setMoveDetails] = useState(false);
 
-    const {id} = props.match.params;
     const modalTypes = useRef();
-    const url = `https://pokeapi.co/api/v2/type/${id}`;
+    
+    const {id} = props.match.params;
+    
+    useEffect( () => {       
 
-    useEffect( () => {
-        fetch(url)
+        fetch(`https://pokeapi.co/api/v2/type/${id}`)
         .then( res => res.json())
         .then( type => {
             setType(type);
@@ -39,7 +40,7 @@ function TypePage(props){
             setMoves(moves);
             setPokemons(pokemonsArr);
         });
-    }, [urlLimit]);
+    }, [urlLimit, id]);
 
     function openDamageCard(event){
         event.currentTarget.classList.toggle('open')
