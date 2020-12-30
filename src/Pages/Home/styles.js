@@ -35,17 +35,6 @@ export const Header = styled.header`
         h1{
             text-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
         }
-
-        figure{
-            width: 2rem;
-            position: absolute;
-            right: 1rem;
-            top: 12.5rem;
-
-            img{
-                width: 100%;
-            }
-        }
     }
 `;
 

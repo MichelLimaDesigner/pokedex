@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Pokemon from '../../Components/Pokemon';
 import ModalTypes from '../../Components/ModalTypes';
+import Search from '../../Components/Search';
 
 import { Container, Header, TitleSection, Types } from './styles';
-import SearchIcon from '../../assets/images/Icons/SearchIcon.svg';
 import Grass from '../../assets/images/Types/grass.png';
 import Fire from '../../assets/images/Types/fire.png';
 import Water from '../../assets/images/Types/water.png';
@@ -27,10 +27,7 @@ function Home() {
             <Header>
                 <div className="container">
                     <h1> Pokedex </h1>
-                    <input type="text" placeholder="Search" />
-                    <figure>
-                        <img src={SearchIcon} alt=""/>
-                    </figure>
+                    <Search />
                 </div>
             </Header>
 
