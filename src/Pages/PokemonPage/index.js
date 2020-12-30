@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ArrowBtn from '../../Components/ArrowBtn/index.js';
 import {Pokemon, Stat} from './styles.js';
 
 function PokemonPage(props){
@@ -42,6 +43,7 @@ function PokemonPage(props){
             {
                 pokemon ? (
                     <Pokemon>
+                        <ArrowBtn />
                         <div className={`pokemon__bg ${pokemon.types[0].type.name} `}></div>
 
                         <figure className="pokemon__image">

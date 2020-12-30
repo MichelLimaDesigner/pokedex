@@ -85,7 +85,7 @@ function Home() {
                     {
                         pokelist.map( poke => {
                             return (
-                                <Link to={`/pokemon/${poke.name}`} key={poke.id}>
+                                <Link to={`/pokemon/${poke.name}`} key={poke.name}>
                                     <Pokemon url={poke.url} key={poke.name} />
                                 </Link>   
                             )

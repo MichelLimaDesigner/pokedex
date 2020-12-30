@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import Pokemon from '../../Components/Pokemon';
 import { Link } from 'react-router-dom';
 import ModalTypes from '../../Components/ModalTypes';
+import ArrowBtn from '../../Components/ArrowBtn';
 
 import { DamageCard, Header, Moves, PokemonGrid } from './styles';
 import ArrowIcon from '../../assets/images/Icons/arrow.svg';
@@ -60,6 +61,7 @@ function TypePage(props){
     return(
         <div>
             <Header className={type.name}>
+                <ArrowBtn />
                 <div className="container">
                     <h1> { type.name } </h1>
                     <p onClick={ () => modalTypes.current.open() }> See all types </p>
