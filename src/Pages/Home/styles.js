@@ -45,8 +45,11 @@ HomePage.Search = styled.div `
 
 
 HomePage.Pokemons = styled.div `
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin: 2rem auto;
 `;
 
 

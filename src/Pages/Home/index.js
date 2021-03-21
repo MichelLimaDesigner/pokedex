@@ -21,7 +21,7 @@ function Home(){
         <HomePage className={ isSidebarOpen ? "home--grid" : '' } >
             <HomePage.Container >
 
-                <HomePage.Header >
+                <HomePage.Header onClick={ () => alert('porra') } >
                     <div className="container">
                         <HomePage.Search >
                             <input type="text" placeholder="Search pokemons" />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { PokemonCard } from './styles';
 
 function Pokemon({url}){
@@ -16,10 +16,26 @@ function Pokemon({url}){
     }, [url]);
 
     return(
-        <PokemonCard >
+        <PokemonCard className={ pokemon && pokemon.types[0].type.name }>
             {
                 pokemon && (
-                    <h1> { pokemon.name } </h1>
+                    <Fragment >
+                        <p className="card__id"> Nº { pokemon.id } </p>
+                        <figure className="card__image">
+                            <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name}/>
+                        </figure>
+                        <p className="card__name"> { pokemon.name } </p>
+                        
+                        <div className="card__types">
+                            {
+                                pokemon.types.map( type => {
+                                    return(
+                                        <p key={type.type.name}> { type.type.name } </p>
+                                        )
+                                })
+                            }
+                        </div>
+                    </Fragment>
                 )
             }
         </PokemonCard>
