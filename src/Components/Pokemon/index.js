@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { PokemonCard } from './styles';
 
-function Pokemon({url}){
+function Pokemon({url, select}){
 
     const [pokemon, setPokemon] = useState();
 
@@ -16,7 +16,7 @@ function Pokemon({url}){
     }, [url]);
 
     return(
-        <PokemonCard className={ pokemon && pokemon.types[0].type.name }>
+        <PokemonCard className={ pokemon && pokemon.types[0].type.name } onClick={ () => select(pokemon) }>
             {
                 pokemon && (
                     <Fragment >

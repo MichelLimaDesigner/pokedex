@@ -42,9 +42,14 @@ export const GlobalStyles = createGlobalStyle `
 
         // Others colors
         --background-body: #F8F8F8;
+        --background-sidebar: #fff;
         --color-txt: #696969;
         --color-title: #363636;
         --color-border: #EAEAEA;
+
+        // Others properties
+        --shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.2);
+        --sidebar-shadow: -0.1rem 0rem 0.5rem rgba(0, 0, 0, 0.2);
 
     }
 
