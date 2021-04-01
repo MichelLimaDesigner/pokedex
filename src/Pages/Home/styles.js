@@ -188,7 +188,7 @@ HomePage.Sidebar = styled.div `
     }
 
     .pokemon__move{
-        background-color: white;
+        background-color: var(--background-body);
         box-shadow: 0 0 0.5rem #d3d3d3;
         margin: 1.5rem auto;
         border-radius: 0.3rem;
@@ -222,15 +222,15 @@ HomePage.Sidebar = styled.div `
 
         .move__border{
             width: 1rem;
-            height: 4.5rem;
+            height: 3.2rem;
             float: right;
         }
 
         h4{
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 200;
             text-transform: capitalize;
-            padding: 1.5rem 1rem;
+            padding: 1rem;
         }
     }
 

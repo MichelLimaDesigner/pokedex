@@ -4,6 +4,7 @@ import { PokemonCard } from './styles';
 function Pokemon({url, select}){
 
     const [pokemon, setPokemon] = useState();
+    const [moves, setMoves] = useState();
 
     useEffect( () => {
         
@@ -15,8 +16,39 @@ function Pokemon({url, select}){
 
     }, [url]);
 
+
+    /*====================================
+    Return pokemon data to show on sidebar
+    =====================================*/
+
+    function returnPokemonSelected(){
+
+        let moves = [];
+
+        for(let i = 0; i < 5; i++){
+            moves.push(pokemon.moves[i]);
+        }
+
+        setMoves(moves);
+
+        select(pokemon, moves);
+        
+    }
+
+    
+    /*====================================
+            Show all pokemon moves
+    =====================================*/
+
+    function loadAllPokemonMoves(){
+
+        setMoves(pokemon.moves);
+
+    }
+    
+
     return(
-        <PokemonCard className={ pokemon && pokemon.types[0].type.name } onClick={ () => select(pokemon) }>
+        <PokemonCard className={ pokemon && pokemon.types[0].type.name } onClick={ returnPokemonSelected }>
             {
                 pokemon && (
                     <Fragment >

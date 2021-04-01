@@ -144,4 +144,22 @@ export const GlobalStyles = createGlobalStyle `
             width: 90%;
         }
     }
+
+
+    /*====================================
+                Elements
+    =====================================*/
+
+    .btn{
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+        font-size: 1rem;
+        box-shadow: var(--shadow);
+        border-radius: 0.3rem;
+        border: none;
+        background-color: transparent;   
+    }
+
+
 `;

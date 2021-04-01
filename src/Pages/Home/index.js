@@ -7,6 +7,7 @@ function Home(){
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [pokemons, setPokemons] = useState();
     const [selectPokemon, setSelectPokemon] = useState();
+    const [selectPokemonMoves, setSelectPokemonMoves] = useState();
 
     useEffect( () => {
         
@@ -19,10 +20,11 @@ function Home(){
     }, []);
 
 
-    function select(pokemon){
+    function select(pokemon, moves){
 
         setIsSidebarOpen(true);
         setSelectPokemon(pokemon);
+        setSelectPokemonMoves(moves);
 
     }
 
@@ -133,17 +135,16 @@ function Home(){
                                     </div>
                                 </div>
 
-                                { /*
                                 <div className="pokemon__moves">
                                     <h3 className="title"> Moves </h3>
                                     {
-                                        moves ? (
-                                            moves.map( move => {
+                                        selectPokemonMoves ? (
+                                            selectPokemonMoves.map( move => {
                                                 return(
-                                                    <div className="pokemon__move" key={move.move.name} onClick={ event => saveMoveDetails(move.move.url) }>
+                                                    <div className="pokemon__move" key={move.move.name} >
                                                         <div className={`move__border ${selectPokemon.types[0].type.name}`}></div>
                                                         <h4> { move.move.name } </h4>
-                                                        { moveDetails && moveDetails.name === move.move.name ? (
+                                                        {/* moveDetails && moveDetails.name === move.move.name ? (
                                                             <div className="move__details">
                                                                 <ul>
                                                                     <li> Type: { moveDetails.type.name } </li>
@@ -153,18 +154,17 @@ function Home(){
                                                                 </ul>
                                                                 <p> { moveDetails.effect_entries[0].effect } </p>
                                                             </div>
-                                                        ) : '' }
+                                                        ) : '' */}
                                                     </div>
                                                 )
                                             })
                                         ) : ''
                                     }
 
-                                    <button className={`btn ${selectPokemon.types[0].type.name}`} onClick={ (event) => loadAllMoves(event.currentTarget) }>
+                                    <button className={`btn ${selectPokemon.types[0].type.name}`} >
                                         <span> See all moves </span>
                                     </button>
                                 </div>
-                                */}
 
                                 { console.log(selectPokemon) }
                             </div>
