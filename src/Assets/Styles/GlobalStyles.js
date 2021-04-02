@@ -159,6 +159,7 @@ export const GlobalStyles = createGlobalStyle `
         border-radius: 0.3rem;
         border: none;
         background-color: transparent;   
+        cursor: pointer;
     }
 
 

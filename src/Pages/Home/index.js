@@ -20,6 +20,9 @@ function Home(){
 
     }, []);
 
+    /*====================================
+            Select pokemon functions
+    =====================================*/
 
     function select(pokemon, moves){
 
@@ -40,6 +43,9 @@ function Home(){
 
     }
 
+    /*====================================
+        Sidebar - pokemon moves details
+    =====================================*/
 
     function saveMoveDetails(url){
 
@@ -48,6 +54,16 @@ function Home(){
         .then( move => {
             setPokemonMoveDetails(move);
         });
+
+    }
+
+    /*====================================
+            Show all pokemon moves
+    =====================================*/
+
+    function loadAllPokemonMoves(){
+
+        setSelectPokemonMoves(selectPokemon.moves);
 
     }
 
@@ -173,12 +189,12 @@ function Home(){
                                         ) : ''
                                     }
 
-                                    <button className={`btn ${selectPokemon.types[0].type.name}`} >
+                                    <button className={`btn ${selectPokemon.types[0].type.name}`} onClick={ loadAllPokemonMoves } >
                                         <span> See all moves </span>
                                     </button>
                                 </div>
 
-                                { console.log(selectPokemon) }
+                                { console.log(selectPokemon, "aqui") }
                             </div>
 
                         </div>

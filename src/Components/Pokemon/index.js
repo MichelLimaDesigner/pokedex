@@ -34,17 +34,6 @@ function Pokemon({url, select}){
         select(pokemon, moves);
         
     }
-
-    
-    /*====================================
-            Show all pokemon moves
-    =====================================*/
-
-    function loadAllPokemonMoves(){
-
-        setMoves(pokemon.moves);
-
-    }
     
 
     return(

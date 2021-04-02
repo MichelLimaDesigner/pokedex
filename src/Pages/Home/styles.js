@@ -217,9 +217,7 @@ HomePage.Sidebar = styled.div `
             p{
                 text-align: center;
                 margin-top: 1rem;
-                padding: 1rem;
                 line-height: 2;
-                border: solid 0.1rem var(--color-border);
                 border-radius: 0.3rem;
             }
         }
