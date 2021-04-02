@@ -3,10 +3,12 @@ import styled from 'styled-components';
 export const HomePage = styled.main `
     width: 100%;
     min-height: 100vh;
+    transition: all 0.3s ease-out;
     
     &.home--grid{
         display: grid;
         grid-template-columns: 70% 30%;
+        transition: all 0.3s ease-out;
     }
 `;
 
@@ -62,6 +64,7 @@ HomePage.Sidebar = styled.div `
     overflow-y: scroll;
     background-color: var(--background-sidebar);
     box-shadow: var(--sidebar-shadow);
+    transition: all 0.3s ease-out;
 
     .pokemon__bg{
         width: 100%;
@@ -194,6 +197,7 @@ HomePage.Sidebar = styled.div `
         border-radius: 0.3rem;
         overflow: hidden;
         transition: all .3s ease-out;
+        cursor: pointer;
 
         .move__details{
             border-top: solid 0.1rem var(--color-border);

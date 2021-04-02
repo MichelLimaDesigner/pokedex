@@ -8,6 +8,7 @@ function Home(){
     const [pokemons, setPokemons] = useState();
     const [selectPokemon, setSelectPokemon] = useState();
     const [selectPokemonMoves, setSelectPokemonMoves] = useState();
+    const [pokemonMoveDetails, setPokemonMoveDetails] = useState();
 
     useEffect( () => {
         
@@ -36,6 +37,17 @@ function Home(){
             setIsSidebarOpen(false);
 
         }
+
+    }
+
+
+    function saveMoveDetails(url){
+
+        fetch(url)
+        .then( res => res.json())
+        .then( move => {
+            setPokemonMoveDetails(move);
+        });
 
     }
 
@@ -141,20 +153,20 @@ function Home(){
                                         selectPokemonMoves ? (
                                             selectPokemonMoves.map( move => {
                                                 return(
-                                                    <div className="pokemon__move" key={move.move.name} >
+                                                    <div className="pokemon__move" key={move.move.name} onClick={ () => saveMoveDetails(move.move.url) } >
                                                         <div className={`move__border ${selectPokemon.types[0].type.name}`}></div>
                                                         <h4> { move.move.name } </h4>
-                                                        {/* moveDetails && moveDetails.name === move.move.name ? (
+                                                        { pokemonMoveDetails && pokemonMoveDetails.name === move.move.name ? (
                                                             <div className="move__details">
                                                                 <ul>
-                                                                    <li> Type: { moveDetails.type.name } </li>
-                                                                    <li> Accuracy: { moveDetails.accuracy } </li>
-                                                                    <li> Power: { moveDetails.power } </li>
-                                                                    <li> Pp: { moveDetails.pp } </li>
+                                                                    <li> Type: { pokemonMoveDetails.type.name } </li>
+                                                                    <li> Accuracy: { pokemonMoveDetails.accuracy } </li>
+                                                                    <li> Power: { pokemonMoveDetails.power } </li>
+                                                                    <li> Pp: { pokemonMoveDetails.pp } </li>
                                                                 </ul>
-                                                                <p> { moveDetails.effect_entries[0].effect } </p>
+                                                                <p> { pokemonMoveDetails.effect_entries[0].effect } </p>
                                                             </div>
-                                                        ) : '' */}
+                                                        ) : ''}
                                                     </div>
                                                 )
                                             })
