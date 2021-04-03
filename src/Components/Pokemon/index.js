@@ -21,7 +21,9 @@ function Pokemon({url, select}){
     Return pokemon data to show on sidebar
     =====================================*/
 
-    function returnPokemonSelected(){
+    function returnPokemonSelected(element){
+
+        // element.classList.add("selected");
 
         let moves = [];
 
@@ -37,7 +39,7 @@ function Pokemon({url, select}){
     
 
     return(
-        <PokemonCard className={ pokemon && pokemon.types[0].type.name } onClick={ returnPokemonSelected }>
+        <PokemonCard className={ pokemon && pokemon.types[0].type.name } onClick={ event => returnPokemonSelected(event.currentTarget) }>
             {
                 pokemon && (
                     <Fragment >

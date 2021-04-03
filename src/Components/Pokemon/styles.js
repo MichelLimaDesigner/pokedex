@@ -24,8 +24,13 @@ export const PokemonCard = styled.div `
     transition: all 0.1s ease-out;
     overflow: hidden;
     opacity: 0;
-    animation: ${anime} 0.3s ease-out forwards;
+    animation: ${anime} 0.3s ease-out 0.5s forwards;
     cursor: pointer;
+
+    &.selected{
+        /* border: solid 0.2rem #228AB7; */
+        box-shadow: 0 0 1rem rgba(0,0,0, .4);
+    }
 
     .card__image{
         width: 8rem;

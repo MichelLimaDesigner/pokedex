@@ -1,5 +1,23 @@
 import styled from 'styled-components';
 
+import BgDark from '../../Assets/Images/dark.png';
+import BgDragon from '../../Assets/Images/dragon.png';
+import BgElectric from '../../Assets/Images/electric.png';
+import BgFighting from '../../Assets/Images/fighting.png';
+import BgFairy from '../../Assets/Images/fairy.png';
+import BgFire from '../../Assets/Images/fire.png';
+import BgFlying from '../../Assets/Images/flying.png';
+import BgGhost from '../../Assets/Images/ghost.png';
+import BgGrass from '../../Assets/Images/grass.png';
+import BgGround from '../../Assets/Images/ground.png';
+import BgIce from '../../Assets/Images/ice.png';
+import BgNormal from '../../Assets/Images/normal.png';
+import BgPoison from '../../Assets/Images/poison.png';
+import BgPsychic from '../../Assets/Images/psychic.png';
+import BgRock from '../../Assets/Images/rock.png';
+import BgSteel from '../../Assets/Images/steel.png';
+import BgWater from '../../Assets/Images/water.png';
+
 export const HomePage = styled.main `
     width: 100%;
     min-height: 100vh;
@@ -75,6 +93,78 @@ HomePage.Sidebar = styled.div `
         background-repeat: no-repeat;
         position: absolute;
         top: -1rem;
+
+        &.grass{
+            background-image: url(${BgGrass});
+        }
+
+        &.bug{
+            background-image: url(${BgGrass});
+        }
+
+        &.fire{
+            background-image: url(${BgFire});
+        }
+
+        &.water{
+            background-image: url(${BgWater});
+        }
+
+        &.poison{
+            background-image: url(${BgPoison});
+        }
+
+        &.rock{
+            background-image: url(${BgRock});
+        }
+
+        &.flying{
+            background-image: url(${BgFlying});
+        }
+
+        &.ground{
+            background-image: url(${BgGround});
+        }
+
+        &.electric{
+            background-image: url(${BgElectric});
+        }
+
+        &.steel{
+            background-image: url(${BgSteel});
+        }
+
+        &.normal{
+            background-image: url(${BgNormal});
+        }
+
+        &.fighting{
+            background-image: url(${BgFighting});
+        }
+
+        &.fairy{
+            background-image: url(${BgFairy});
+        }
+
+        &.psychic{
+            background-image: url(${BgPsychic});
+        }
+
+        &.ghost{
+            background-image: url(${BgGhost});
+        }
+
+        &.ice{
+            background-image: url(${BgIce});
+        }
+
+        &.dark{
+            background-image: url(${BgDark});
+        }
+
+        &.dragon{
+            background-image: url(${BgDragon});
+        }
     }
 
     .pokemon__header{
